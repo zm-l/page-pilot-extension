@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Page Pilot</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">Page Pilot <span class="tag">MVP</span> <span id="modeTag" class="mode off">Simple commands</span></div>
+    <button id="settingsBtn" class="ghost" title="Permissions and AI model">Settings</button>
+  </header>
+
+  <div id="accessBar" class="access-bar"></div>
+
+  <section id="settings" class="settings hidden" aria-label="Permissions"></section>
+
+  <main id="log" aria-live="polite"></main>
+
+  <footer>
+    <div id="runBar" class="run-bar hidden">
+      <span class="spinner"></span><span id="runStatus">Workingâ€¦</span>
+      <button id="stopBtn" class="danger small">Stop</button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <form id="form">
+      <textarea id="input" rows="2" placeholder='Tell Page Pilot what to do… (Enter to send, Shift+Enter for a new line)'></textarea>
+      <button type="submit" class="primary">Run</button>
+    </form>
+  </footer>
+
+  <script src="ai.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

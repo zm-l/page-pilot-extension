@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Page Pilot (Permission MVP)",
+  "version": "0.2.0",
+  "description": "A Side Panel browser agent that asks for website access only when needed uses an AI model of your choice, and never reads sensitive information.",
+  "minimum_chrome_version": "116",
+  "action": {
+    "default_title": "Open Page Pilot (also allows access to this tab once)"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["sidePanel", "activeTab", "scripting", "storage"],
+  "optional_permissions": ["tabs"],
+  "optional_host_permissions": ["http://*/*", "https://*/*", "https://openrouter.ai/*"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+P" },
+      "description": "Open Page Pilot and allow access to the current tab once"
+    }
+  }
+}
